@@ -14,7 +14,7 @@ var Recorder = function( config = {} ){
   this.config = Object.assign({
     bufferLength: 4096,
     encoderApplication: 2049,
-    encoderFrameSize: 20,
+    encoderFrameSize: 10,
     encoderPath: 'encoderWorker.min.js',
     encoderSampleRate: 48000,
     maxFramesPerPage: 40,
@@ -40,7 +40,7 @@ Recorder.isRecordingSupported = function(){
   return AudioContext && getUserMediaSupported && global.WebAssembly;
 };
 
-Recorder.version = '8.0.3';
+Recorder.version = '8.1.0';
 
 
 // Instance Methods

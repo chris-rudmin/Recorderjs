@@ -60,7 +60,7 @@ describe('encoderWorker', function() {
     expect(encoder.config).to.have.property('encoderSampleRate', 48000);
     expect(encoder.config).to.have.property('maxFramesPerPage', 40);
     expect(encoder.config).to.have.property('encoderApplication', 2049);
-    expect(encoder.config).to.have.property('encoderFrameSize', 20);
+    expect(encoder.config).to.have.property('encoderFrameSize', 10);
     expect(encoder.config).to.have.property('resampleQuality', 3);
     expect(encoder.config).to.have.property('originalSampleRate', 44100);
   });

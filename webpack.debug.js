@@ -1,12 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
+  devtool: 'source-map',
   output: {
     globalObject: 'typeof self !== \'undefined\' ? self : this',
     library: 'test',
     libraryTarget: 'umd',
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "debug")
   },
   module: {
     rules: [

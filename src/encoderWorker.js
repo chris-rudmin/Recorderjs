@@ -10,7 +10,7 @@ const OggOpusEncoder = function( config, Module ){
     encoderApplication: 2049, // 2048 = Voice (Lower fidelity)
                               // 2049 = Full Band Audio (Highest fidelity)
                               // 2051 = Restricted Low Delay (Lowest latency)
-    encoderFrameSize: 20, // Specified in ms.
+    encoderFrameSize: 10, // Specified in ms.
     encoderSampleRate: 48000, // Desired encoding sample rate. Audio will be resampled
     maxFramesPerPage: 40, // Tradeoff latency with overhead
     numberOfChannels: 1,

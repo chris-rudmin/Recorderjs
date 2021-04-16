@@ -63,7 +63,7 @@ var OggOpusDecoder = function( config, Module ){
 
 OggOpusDecoder.prototype.decode = function( typedArray ) {
   var dataView = new DataView( typedArray.buffer );
-  this.getPageBoundaries( dataView ).map( function( pageStart ) {
+  this.getPageBoundaries( dataView ).forEach( function( pageStart ) {
     var headerType = dataView.getUint8( pageStart + 5, true );
     var pageIndex = dataView.getUint32( pageStart + 18, true );
 
@@ -106,7 +106,7 @@ OggOpusDecoder.prototype.getPageBoundaries = function( dataView ){
   var pageBoundaries = [];
 
   for ( var i = 0; i < dataView.byteLength - 32; i++ ) {
-    if ( dataView.getUint32( i, true ) == 1399285583 ) {
+    if ( dataView.getUint32( i, true ) == 1399285583 ) { // Capture Pattern starts all page headers 'OggS'
       pageBoundaries.push( i );
     }
   }

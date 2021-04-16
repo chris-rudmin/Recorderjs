@@ -5,12 +5,12 @@ A javascript library to encode the output of Web Audio API nodes in Ogg Opus or 
 
 #### Libraries Used
 
-- Libopus: v1.3.1 compiled with emscripten 1.39.14
-- speexDSP: 1.2.0 compiled with emscripten 1.39.14
+- Libopus: v1.3.1 compiled with emscripten 2.0.17
+- speexDSP: 1.2.0 compiled with emscripten 2.0.17
 
 #### Required Files
 
-The required files are in the `dist` folder. Unminified sources are in `dist-unminified`.
+The required files are in the `dist` folder. Unminified sources are in `debug`.
 Examples for recording, encoding, and decoding are in `examples` folder.
 
 ---------
@@ -47,7 +47,7 @@ Creates a recorder instance.
 - **encoderApplication**          - (*optional*) Supported values are: `2048` - Voice, `2049` - Full Band Audio, `2051` - Restricted Low Delay. Defaults to `2049`.
 - **encoderBitRate**              - (*optional*) Target bitrate in bits/sec. The encoder selects an application-specific default when this is not specified.
 - **encoderComplexity**           - (*optional*) Value between 0 and 10 which determines latency and processing for encoding. `0` is fastest with lowest complexity. `10` is slowest with highest complexity. The encoder selects a default when this is not specified.
-- **encoderFrameSize**            - (*optional*) Specifies the frame size in ms used for encoding. Defaults to `20`.
+- **encoderFrameSize**            - (*optional*) Specifies the frame size in ms used for encoding. Defaults to `10`.
 - **encoderSampleRate**           - (*optional*) Specifies the sample rate to encode at. Defaults to `48000`. Supported values are `8000`, `12000`, `16000`, `24000` or `48000`.
 - **maxFramesPerPage**            - (*optional*) Maximum number of frames to collect before generating an Ogg page. This can be used to lower the streaming latency. The lower the value the more overhead the ogg stream will incur. Defaults to `40`.
 - **originalSampleRateOverride**  - (*optional*) Override the ogg opus 'input sample rate' field. Google Speech API requires this field to be `16000`.
